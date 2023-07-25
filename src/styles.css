@@ -2,3 +2,16 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+input {
+  padding: 0.5rem;
+}
+
+p {
+  font-weight: bold;
+}
+span {
+  display: inline;
+  padding: 1rem;
+  font-size: 2rem;
+}

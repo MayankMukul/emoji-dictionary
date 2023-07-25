@@ -2,29 +2,54 @@ import "./styles.css";
 import { useState } from "react";
 
 export default function App() {
-  var [likeCounter, newCounter] = useState(0);
   var [oldchange, newchange] = useState("");
+  var [emoji, meaningm] = useState("");
 
-  function updateCounter() {
-    newCounter(likeCounter + 1);
-  }
+  var emojiDictionary = {
+    "😂": "laughing",
+    "❤️": "heart",
+    "😥": "sad",
+    "🤣": "laughing out loud",
+    "😊": "smile",
+    "🎶": "music"
+  };
 
-  function display() {
-    updateCounter();
-  }
+  var emojiKnown = Object.keys(emojiDictionary);
 
   function changeinput(event) {
     newchange(event.target.value);
-    console.log({ oldchange });
+    var inputvalue = event.target.value;
+    var meaning = emojiDictionary[inputvalue];
+
+    if (inputvalue in emojiDictionary) {
+      meaningm(meaning);
+    } else {
+      meaningm("we dont have it");
+    }
+  }
+
+  function emojihandler(emoji) {
+    var meaning = emojiDictionary[emoji];
+    meaningm(meaning);
   }
 
   return (
     <div className="App">
-      <h1>Hello World</h1>
-      <h2>hello </h2>
-      <button onClick={display}>click me</button> {likeCounter}
+      <h1>Emoji Dictionary</h1>
+
       <input onChange={changeinput} />
-      <p>{oldchange}</p>
+      <h2>{oldchange}</h2>
+      <p>{emoji}</p>
+
+      <div>
+        {emojiKnown.map(function (item) {
+          return (
+            <span onClick={() => emojihandler(item)} key={item}>
+              {item}
+            </span>
+          );
+        })}
+      </div>
     </div>
   );
 }
