@@ -36,6 +36,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>Emoji Dictionary</h1>
+      <h3>Enter the emoji or click from below</h3>
 
       <input onChange={changeinput} />
       <h2>{oldchange}</h2>
