@@ -11,7 +11,11 @@ export default function App() {
     "😥": "Sad",
     "🤣": "Laughing Out Loud",
     "😊": "Smile",
-    "🎶": "Music"
+    "🎶": "Music",
+    "👍🏻": "Thumbs Up",
+    "💯": "Hundred Points Symbol",
+    "✌️": "Victory Hand Sign",
+    "😭": "Crying Face"
   };
 
   var emojiKnown = Object.keys(emojiDictionary);
