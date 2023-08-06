@@ -6,12 +6,12 @@ export default function App() {
   var [emoji, meaningm] = useState("");
 
   var emojiDictionary = {
-    "😂": "laughing",
-    "❤️": "heart",
-    "😥": "sad",
-    "🤣": "laughing out loud",
-    "😊": "smile",
-    "🎶": "music"
+    "😂": "Laughing",
+    "❤️": "Heart",
+    "😥": "Sad",
+    "🤣": "Laughing Out Loud",
+    "😊": "Smile",
+    "🎶": "Music"
   };
 
   var emojiKnown = Object.keys(emojiDictionary);
@@ -24,7 +24,7 @@ export default function App() {
     if (inputvalue in emojiDictionary) {
       meaningm(meaning);
     } else {
-      meaningm("we dont have it");
+      meaningm("We dont have it");
     }
   }
 
